@@ -13,13 +13,10 @@
             --card-bg: #151515;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             background-color: var(--dark-bg);
-            /* Textura de puntos sutil */
             background-image: radial-gradient(#1a1a1a 1px, transparent 1px);
             background-size: 25px 25px;
             color: white;
@@ -28,24 +25,9 @@
             overflow-x: hidden;
         }
 
-        /* --- ANIMACIONES --- */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-
-        .anim-fade { animation: fadeInUp 1.2s ease-out forwards; }
-        .logo-float { animation: float 4s ease-in-out infinite; }
-
         /* --- NAVEGACIÓN --- */
         nav {
-            background: rgba(0,0,0,0.9);
+            background: rgba(0,0,0,0.95);
             backdrop-filter: blur(10px);
             padding: 20px;
             position: sticky;
@@ -53,60 +35,41 @@
             z-index: 100;
             border-bottom: 2px solid var(--pink-onikuma);
         }
+        nav ul { display: flex; justify-content: center; list-style: none; gap: 30px; margin: 0; padding: 0; }
+        nav a { color: white; text-decoration: none; font-family: 'Orbitron', sans-serif; font-size: 0.9rem; transition: 0.3s; }
+        nav a:hover { color: var(--pink-onikuma); }
 
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            gap: 30px;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.9rem;
-            transition: 0.3s;
-        }
-
-        nav a:hover { color: var(--pink-onikuma); text-shadow: 0 0 8px var(--pink-onikuma); }
-
-        .container { max-width: 1100px; margin: auto; padding: 60px 20px; }
-
-        h2 { font-family: 'Orbitron', sans-serif; text-align: center; font-size: 2.5rem; margin-bottom: 40px; }
-
-        /* --- BANNER PRINCIPAL ACTUALIZADO --- */
+        /* --- BANNER (TEXTO ORDENADO A LA IZQUIERDA) --- */
         .hero-banner {
             position: relative;
             height: 550px;
-            background: url('banner.jpg') no-repeat center center;
+            background: linear-gradient(to right, rgba(0,0,0,0.6) 20%, rgba(0,0,0,0.1)), url('banner.png') no-repeat center center;
             background-size: cover;
             display: flex;
-            align-items: center;
+            align-items: center; /* Centrado vertical */
+            justify-content: flex-start; /* Alineado a la izquierda horizontal */
             border-bottom: 5px solid var(--pink-onikuma);
         }
 
-        .banner-content {
-            width: 100%;
-            max-width: 1200px;
-            margin: auto;
-            padding: 0 40px;
+        .banner-content { 
+            width: 100%; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 50px; /* Margen lateral para que no toque el borde */
         }
 
         .gamer-text {
+            text-align: left; /* Alineación del texto a la izquierda */
             max-width: 600px;
-            text-align: left;
         }
 
         .gamer-text h1 {
             font-family: 'Permanent Marker', cursive;
-            font-size: 4.5rem;
+            font-size: clamp(3rem, 8vw, 5rem); /* Mantiene el tamaño actual */
             color: white;
-            line-height: 1.1;
             margin: 0;
             text-shadow: 4px 4px 0px var(--pink-onikuma);
+            line-height: 1.1;
             transform: rotate(-2deg);
         }
 
@@ -114,91 +77,37 @@
             font-family: 'Orbitron', sans-serif;
             font-size: 1.4rem;
             color: var(--pink-onikuma);
-            font-weight: bold;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.8);
             display: inline-block;
-            padding: 5px 15px;
-            margin-top: 15px;
+            padding: 8px 20px;
+            margin-top: 20px;
+            border: 1px solid var(--pink-onikuma);
+            font-weight: bold;
+            letter-spacing: 2px;
         }
 
-        /* --- SECCIÓN DE MARCA (BAJO EL BANNER) --- */
-        .brand-section {
-            padding: 80px 0;
-            background: rgba(255, 0, 127, 0.02);
-            border-bottom: 1px solid #111;
-        }
-
-        .info-box {
-            background: rgba(20, 20, 20, 0.8);
-            border-left: 4px solid var(--pink-onikuma);
-            padding: 25px;
-            margin-bottom: 25px;
-            backdrop-filter: blur(5px);
-        }
+        /* --- SECCIÓN MARCA --- */
+        .brand-section { padding: 80px 0; background: #050505; border-bottom: 1px solid #111; }
+        .container { max-width: 1100px; margin: auto; padding: 0 20px; }
+        .info-box { background: rgba(20, 20, 20, 0.8); border-left: 4px solid var(--pink-onikuma); padding: 25px; margin-bottom: 25px; }
 
         /* --- PRODUCTOS --- */
-        .grid-productos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border-radius: 5px;
-            overflow: hidden;
-            transition: 0.4s;
-            border: 1px solid #222;
-            text-align: center;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: var(--pink-onikuma);
-            box-shadow: -5px 5px 0px var(--pink-onikuma);
-        }
-
+        .grid-productos { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; margin-top: 40px; }
+        .card { background: var(--card-bg); border-radius: 5px; border: 1px solid #222; overflow: hidden; transition: 0.3s; text-align: center; }
+        .card:hover { border-color: var(--pink-onikuma); transform: translateY(-5px); box-shadow: -5px 5px 0px var(--pink-onikuma); }
         .card img { width: 100%; height: 220px; object-fit: cover; }
-        .card-info { padding: 15px; }
-        .card-info h3 { color: var(--pink-onikuma); margin: 10px 0; font-family: 'Orbitron', sans-serif; }
+        .card h3 { font-family: 'Orbitron'; color: var(--pink-onikuma); font-size: 1.1rem; margin: 15px 0; }
 
-        /* --- VIDEOS --- */
-        .grid-videos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-        }
-
-        .video-box {
-            background: #111;
-            padding: 15px;
-            border-radius: 10px;
-            border: 1px solid #333;
-        }
-
-        video { border-radius: 5px; width: 100%; display: block; }
+        /* --- MEDIA CENTER --- */
+        .grid-videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-top: 40px; }
+        .v-box { background: #111; padding: 15px; border: 1px solid #333; border-radius: 8px; text-align: center; }
+        video, iframe { width: 100%; border-radius: 4px; aspect-ratio: 16/9; }
 
         /* --- CONTACTO --- */
+        .contacto-section { padding: 80px 0; background: #080808; }
         form { display: flex; flex-direction: column; gap: 15px; max-width: 600px; margin: auto; }
-        input, textarea {
-            background: #111;
-            border: 1px solid #333;
-            padding: 15px;
-            color: white;
-            font-family: 'Rajdhani', sans-serif;
-        }
-
-        button {
-            background: var(--pink-onikuma);
-            color: white;
-            border: none;
-            padding: 18px;
-            font-family: 'Orbitron', sans-serif;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
+        input, textarea { background: #111; border: 1px solid #333; padding: 15px; color: white; font-family: 'Rajdhani'; font-size: 1rem; }
+        button { background: var(--pink-onikuma); color: white; border: none; padding: 18px; font-family: 'Orbitron'; font-weight: bold; cursor: pointer; transition: 0.3s; }
         button:hover { background: white; color: var(--pink-onikuma); box-shadow: 0 0 20px white; }
     </style>
 </head>
@@ -208,14 +117,14 @@
         <ul>
             <li><a href="#home">Inicio</a></li>
             <li><a href="#productos">Productos</a></li>
-            <li><a href="#videos">Videos</a></li>
+            <li><a href="#videos">Media</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>
 
     <header id="home" class="hero-banner">
         <div class="banner-content">
-            <div class="gamer-text anim-fade">
+            <div class="gamer-text">
                 <h1>DOMINA EL JUEGO</h1>
                 <p>ONIKUMA ELITE GEAR</p>
             </div>
@@ -224,72 +133,70 @@
 
     <section class="brand-section">
         <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
-                <div class="anim-fade">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; align-items: center;">
+                <div>
                     <div class="info-box">
-                        <h3 style="font-family: 'Orbitron'; color: var(--pink-onikuma); margin-top:0;">Misión</h3>
-                        <p style="font-size: 1.2rem; line-height: 1.6;">Equipar a la comunidad con tecnología de vanguardia y diseño disruptivo para una experiencia gaming superior.</p>
+                        <h3 style="color: var(--pink-onikuma); font-family: 'Orbitron'; margin-top: 0;">Misión</h3>
+                        <p>Equipar a la comunidad con tecnología de vanguardia y diseño disruptivo para una experiencia gaming superior..</p>
                     </div>
                     <div class="info-box">
-                        <h3 style="font-family: 'Orbitron'; color: var(--pink-onikuma); margin-top:0;">Visión</h3>
-                        <p style="font-size: 1.2rem; line-height: 1.6;">Liderar la cultura global del videojuego, siendo la marca referente en estilo, potencia y comodidad.</p>
+                        <h3 style="color: var(--pink-onikuma); font-family: 'Orbitron'; margin-top: 0;">Visión</h3>
+                        <p>Liderar la cultura global del videojuego, siendo la marca referente en estilo, potencia y comodidad..</p>
                     </div>
                 </div>
                 <div style="text-align: center;">
-                    <img src="Onikuma Logo.jpg" alt="Logo" class="logo-float" style="width: 100%; max-width: 380px; filter: drop-shadow(0 0 25px var(--pink-onikuma));">
+                    <img src="Onikuma Logo.jpg" alt="Logo" style="width: 100%; max-width: 350px; filter: drop-shadow(0 0 20px var(--pink-onikuma));">
                 </div>
             </div>
         </div>
     </section>
 
-   <section id="productos" class="container">
-        <h2>Catálogo Elite</h2>
+    <section id="productos" class="container" style="padding: 80px 20px;">
+        <h2 style="font-family: 'Orbitron'; text-align: center;">Catálogo Elite</h2>
         <div class="grid-productos">
-            <div class="card"><img src="Onikuma G32.webp" alt="G32"><div class="card-info"><h3>Teclado G32</h3><p>RGB Pro</p></div></div>
-            <div class="card"><img src="Onikuma MT707.webp" alt="MT707"><div class="card-info"><h3>Teclado MT707</h3><p>Sakura Style</p></div></div>
-            <div class="card"><img src="Onikuma CW902.jpg" alt="CW902"><div class="card-info"><h3>Mouse CW902</h3><p>Optic</p></div></div>
-            <div class="card"><img src="Onikuma Cw925.webp" alt="Cw925"><div class="card-info"><h3>Mouse CW925</h3><p>Advanced</p></div></div>
-            <div class="card"><img src="Onikuma K10.jpg" alt="K10"><div class="card-info"><h3>Headset K10</h3><p>Sonido Pro</p></div></div>
-            <div class="card"><img src="Onikuma GT808.jpg" alt="GT808"><div class="card-info"><h3>Headset GT808</h3><p>Gaming</p></div></div>
-            <div class="card"><img src="Onikuma T27.webp" alt="T27"><div class="card-info"><h3>Earbuds T27</h3><p>Wireless</p></div></div>
-            <div class="card"><img src="Onikuma T32.jpg" alt="T32"><div class="card-info"><h3>Earbuds T32</h3><p>Sport</p></div></div>
+            <div class="card"><img src="Onikuma G32.webp" alt="G32"><h3>Teclado G32 RGB</h3></div>
+            <div class="card"><img src="Onikuma MT707.webp" alt="MT707"><h3>Teclado Sakura MT707</h3></div>
+            <div class="card"><img src="Onikuma CW902.jpg" alt="CW902"><h3>Mouse CW902</h3></div>
+            <div class="card"><img src="Onikuma Cw925.webp" alt="CW925"><h3>Mouse Advanced CW925</h3></div>
+            <div class="card"><img src="Onikuma K10.jpg" alt="K10"><h3>Headset K10 Pro</h3></div>
+            <div class="card"><img src="Onikuma GT808.jpg" alt="GT808"><h3>Headset GT808</h3></div>
+            <div class="card"><img src="Onikuma T27.webp" alt="T27"><h3>Earbuds T27</h3></div>
+            <div class="card"><img src="Onikuma T32.jpg" alt="T32"><h3>Earbuds Sport T32</h3></div>
         </div>
     </section>
 
-    <section id="videos" class="container anim-fade">
-        <h2 class="neon-glow">Media Center</h2>
+    <section id="videos" class="container" style="padding: 0 20px 80px;">
+        <h2 style="font-family: 'Orbitron'; text-align: center;">Media Center</h2>
         <div class="grid-videos">
-            <div class="video-box">
+            <div class="v-box">
                 <video controls><source src="video_k15.mp4" type="video/mp4"></video>
-                <h3 style="text-align:center; color: var(--pink-onikuma); margin-top:15px; font-family: 'Orbitron';">K15 Showcase</h3>
+                <p style="font-family: 'Orbitron'; color: var(--pink-onikuma); margin-top:10px;">K15 Showcase</p>
             </div>
-            <div class="video-box">
-                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 5px;">
-                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" src="https://www.youtube.com/embed/KyxgtazNusY" allowfullscreen></iframe>
-                </div>
-                <h3 style="text-align:center; color: var(--pink-onikuma); margin-top:15px; font-family: 'Orbitron';">GT 808 Review</h3>
+            <div class="v-box">
+                <iframe src="https://www.youtube.com/embed/KyxgtazNusY" allowfullscreen></iframe>
+                <p style="font-family: 'Orbitron'; color: var(--pink-onikuma); margin-top:10px;">Review GT 808</p>
             </div>
-            <div class="video-box">
-                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 5px;">
-                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" src="https://www.youtube.com/embed/esZgyePD5T0" allowfullscreen></iframe>
-                </div>
-                <h3 style="text-align:center; color: var(--pink-onikuma); margin-top:15px; font-family: 'Orbitron';">X91 Lighting Pro</h3>
+            <div class="v-box">
+                <iframe src="https://www.youtube.com/embed/esZgyePD5T0" allowfullscreen></iframe>
+                <p style="font-family: 'Orbitron'; color: var(--pink-onikuma); margin-top:10px;">X91 Lighting Pro</p>
             </div>
         </div>
     </section>
 
-    <section id="contacto" class="container">
-        <h2>Contáctenos</h2>
-        <form action="#">
-            <input type="text" placeholder="Gamertag / Nombre" required>
-            <input type="email" placeholder="Correo Electrónico" required>
-            <textarea rows="5" placeholder="¿Cómo podemos mejorar tu setup?"></textarea>
-            <button type="submit">ENVIAR SOLICITUD</button>
-        </form>
+    <section id="contacto" class="contacto-section">
+        <div class="container">
+            <h2 style="font-family: 'Orbitron'; text-align: center;">Contáctanos</h2>
+            <form action="#">
+                <input type="text" placeholder="Gamertag / Nombre" required>
+                <input type="email" placeholder="Correo Electrónico" required>
+                <textarea rows="5" placeholder="¿Cómo podemos mejorar tu setup?"></textarea>
+                <button type="submit">ENVIAR SOLICITUD</button>
+            </form>
+        </div>
     </section>
 
-    <footer style="text-align: center; padding: 60px; color: #444; border-top: 1px solid #111;">
-        <p>&copy; 2026 Onikuma Gaming | Periféricos Elite</p>
+    <footer style="text-align: center; padding: 40px; color: #444;">
+        <p>&copy; 2026 Onikuma Gaming | Periféricos de Alto Rendimiento</p>
     </footer>
 
 </body>

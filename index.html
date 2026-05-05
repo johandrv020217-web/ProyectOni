@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Onikuma Gaming | Official Site</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Permanent+Marker&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+    .hero-banner {
+        position: relative;
+        height: 550px;
+        /* He añadido un color de fondo oscuro por si la imagen falla */
+        background: #0a0a0a url('banner.png') no-repeat center center;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        border-bottom: 5px solid var(--pink-onikuma);
+    }
+</style>
     
     <style>
         :root {
@@ -25,7 +39,6 @@
             overflow-x: hidden;
         }
 
-        /* --- NAVEGACIÓN --- */
         nav {
             background: rgba(0,0,0,0.95);
             backdrop-filter: blur(10px);
@@ -39,15 +52,14 @@
         nav a { color: white; text-decoration: none; font-family: 'Orbitron', sans-serif; font-size: 0.9rem; transition: 0.3s; }
         nav a:hover { color: var(--pink-onikuma); }
 
-        /* --- BANNER (TEXTO ORDENADO A LA IZQUIERDA) --- */
         .hero-banner {
             position: relative;
             height: 550px;
             background: linear-gradient(to right, rgba(0,0,0,0.6) 20%, rgba(0,0,0,0.1)), url('banner.png') no-repeat center center;
             background-size: cover;
             display: flex;
-            align-items: center; /* Centrado vertical */
-            justify-content: flex-start; /* Alineado a la izquierda horizontal */
+            align-items: center; 
+            justify-content: flex-start;
             border-bottom: 5px solid var(--pink-onikuma);
         }
 
@@ -55,17 +67,17 @@
             width: 100%; 
             max-width: 1200px; 
             margin: 0 auto; 
-            padding: 0 50px; /* Margen lateral para que no toque el borde */
+            padding: 0 50px;
         }
 
         .gamer-text {
-            text-align: left; /* Alineación del texto a la izquierda */
+            text-align: left;
             max-width: 600px;
         }
 
         .gamer-text h1 {
             font-family: 'Permanent Marker', cursive;
-            font-size: clamp(3rem, 8vw, 5rem); /* Mantiene el tamaño actual */
+            font-size: clamp(3rem, 8vw, 5rem);
             color: white;
             margin: 0;
             text-shadow: 4px 4px 0px var(--pink-onikuma);
@@ -86,24 +98,20 @@
             letter-spacing: 2px;
         }
 
-        /* --- SECCIÓN MARCA --- */
         .brand-section { padding: 80px 0; background: #050505; border-bottom: 1px solid #111; }
         .container { max-width: 1100px; margin: auto; padding: 0 20px; }
         .info-box { background: rgba(20, 20, 20, 0.8); border-left: 4px solid var(--pink-onikuma); padding: 25px; margin-bottom: 25px; }
 
-        /* --- PRODUCTOS --- */
         .grid-productos { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; margin-top: 40px; }
         .card { background: var(--card-bg); border-radius: 5px; border: 1px solid #222; overflow: hidden; transition: 0.3s; text-align: center; }
         .card:hover { border-color: var(--pink-onikuma); transform: translateY(-5px); box-shadow: -5px 5px 0px var(--pink-onikuma); }
         .card img { width: 100%; height: 220px; object-fit: cover; }
         .card h3 { font-family: 'Orbitron'; color: var(--pink-onikuma); font-size: 1.1rem; margin: 15px 0; }
 
-        /* --- MEDIA CENTER --- */
         .grid-videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-top: 40px; }
         .v-box { background: #111; padding: 15px; border: 1px solid #333; border-radius: 8px; text-align: center; }
         video, iframe { width: 100%; border-radius: 4px; aspect-ratio: 16/9; }
 
-        /* --- CONTACTO --- */
         .contacto-section { padding: 80px 0; background: #080808; }
         form { display: flex; flex-direction: column; gap: 15px; max-width: 600px; margin: auto; }
         input, textarea { background: #111; border: 1px solid #333; padding: 15px; color: white; font-family: 'Rajdhani'; font-size: 1rem; }

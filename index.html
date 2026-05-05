@@ -25,7 +25,6 @@
             overflow-x: hidden;
         }
 
-        /* --- NAVEGACIÓN --- */
         nav {
             background: rgba(0,0,0,0.95);
             backdrop-filter: blur(10px);
@@ -39,16 +38,14 @@
         nav a { color: white; text-decoration: none; font-family: 'Orbitron', sans-serif; font-size: 0.9rem; transition: 0.3s; }
         nav a:hover { color: var(--pink-onikuma); }
 
-        /* --- BANNER (TEXTO A LA IZQUIERDA Y NITIDEZ) --- */
         .hero-banner {
             position: relative;
             height: 550px;
-            /* Cambiado a banner.png - Asegúrate que en GitHub sea minúsculas */
-            background: linear-gradient(to right, rgba(0,0,0,0.7) 10%, rgba(0,0,0,0.1)), url('banner.png') no-repeat center center;
+            background: linear-gradient(to right, rgba(0,0,0,0.6) 20%, rgba(0,0,0,0.1)), url('banner.png') no-repeat center center;
             background-size: cover;
             display: flex;
-            align-items: center;
-            justify-content: flex-start;
+            align-items: center; /* Centrado vertical */
+            justify-content: flex-start; /* Alineado a la izquierda horizontal */
             border-bottom: 5px solid var(--pink-onikuma);
         }
 
@@ -56,17 +53,17 @@
             width: 100%; 
             max-width: 1200px; 
             margin: 0 auto; 
-            padding: 0 50px; 
+            padding: 0 50px; /* Margen lateral para que no toque el borde */
         }
 
         .gamer-text {
-            text-align: left;
-            max-width: 650px;
+            text-align: left; /* Alineación del texto a la izquierda */
+            max-width: 600px;
         }
 
         .gamer-text h1 {
             font-family: 'Permanent Marker', cursive;
-            font-size: clamp(3rem, 8vw, 5rem);
+            font-size: clamp(3rem, 8vw, 5rem); /* Mantiene el tamaño actual */
             color: white;
             margin: 0;
             text-shadow: 4px 4px 0px var(--pink-onikuma);
@@ -80,30 +77,27 @@
             color: var(--pink-onikuma);
             background: rgba(0, 0, 0, 0.8);
             display: inline-block;
-            padding: 10px 20px;
+            padding: 8px 20px;
             margin-top: 20px;
             border: 1px solid var(--pink-onikuma);
             font-weight: bold;
+            letter-spacing: 2px;
         }
 
-        /* --- SECCIÓN MARCA (LOGO, MISIÓN, VISIÓN) --- */
         .brand-section { padding: 80px 0; background: #050505; border-bottom: 1px solid #111; }
         .container { max-width: 1100px; margin: auto; padding: 0 20px; }
         .info-box { background: rgba(20, 20, 20, 0.8); border-left: 4px solid var(--pink-onikuma); padding: 25px; margin-bottom: 25px; }
 
-        /* --- PRODUCTOS --- */
         .grid-productos { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; margin-top: 40px; }
         .card { background: var(--card-bg); border-radius: 5px; border: 1px solid #222; overflow: hidden; transition: 0.3s; text-align: center; }
         .card:hover { border-color: var(--pink-onikuma); transform: translateY(-5px); box-shadow: -5px 5px 0px var(--pink-onikuma); }
         .card img { width: 100%; height: 220px; object-fit: cover; }
         .card h3 { font-family: 'Orbitron'; color: var(--pink-onikuma); font-size: 1.1rem; margin: 15px 0; }
 
-        /* --- MEDIA CENTER (3 VIDEOS) --- */
         .grid-videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-top: 40px; }
         .v-box { background: #111; padding: 15px; border: 1px solid #333; border-radius: 8px; text-align: center; }
-        video, iframe { width: 100%; border-radius: 4px; aspect-ratio: 16/9; border: 0; }
+        video, iframe { width: 100%; border-radius: 4px; aspect-ratio: 16/9; }
 
-        /* --- CONTACTO --- */
         .contacto-section { padding: 80px 0; background: #080808; }
         form { display: flex; flex-direction: column; gap: 15px; max-width: 600px; margin: auto; }
         input, textarea { background: #111; border: 1px solid #333; padding: 15px; color: white; font-family: 'Rajdhani'; font-size: 1rem; }
@@ -136,16 +130,16 @@
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; align-items: center;">
                 <div>
                     <div class="info-box">
-                        <h3 style="color: var(--pink-onikuma); font-family: 'Orbitron'; margin: 0 0 10px 0;">Misión</h3>
-                        <p>Brindar la mejor tecnología y estilo para potenciar el rendimiento de cada jugador en cada partida.</p>
+                        <h3 style="color: var(--pink-onikuma); font-family: 'Orbitron'; margin-top: 0;">Misión</h3>
+                        <p>Equipar a la comunidad con tecnología de vanguardia y diseño disruptivo para una experiencia gaming superior..</p>
                     </div>
                     <div class="info-box">
-                        <h3 style="color: var(--pink-onikuma); font-family: 'Orbitron'; margin: 0 0 10px 0;">Visión</h3>
-                        <p>Ser la marca líder mundial en periféricos gaming, definiendo el futuro del setup ideal.</p>
+                        <h3 style="color: var(--pink-onikuma); font-family: 'Orbitron'; margin-top: 0;">Visión</h3>
+                        <p>Liderar la cultura global del videojuego, siendo la marca referente en estilo, potencia y comodidad..</p>
                     </div>
                 </div>
                 <div style="text-align: center;">
-                    <img src="Onikuma Logo.jpg" alt="Logo Onikuma" style="width: 100%; max-width: 350px; filter: drop-shadow(0 0 20px var(--pink-onikuma));">
+                    <img src="Onikuma Logo.jpg" alt="Logo" style="width: 100%; max-width: 350px; filter: drop-shadow(0 0 20px var(--pink-onikuma));">
                 </div>
             </div>
         </div>

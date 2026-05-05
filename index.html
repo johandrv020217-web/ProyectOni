@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Onikuma Gaming | Official Site</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Permanent+Marker&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --pink-onikuma: #ff007f;
             --dark-bg: #0a0a0a;
-            --card-bg: #1a1a1a;
+            --card-bg: #151515;
         }
 
-        /* ESTO CORRIGE EL SALTO BRUSCO */
         html {
             scroll-behavior: smooth;
         }
 
         body {
             background-color: var(--dark-bg);
+            /* Textura de puntos sutil */
+            background-image: radial-gradient(#1a1a1a 1px, transparent 1px);
+            background-size: 25px 25px;
             color: white;
             font-family: 'Rajdhani', sans-serif;
             margin: 0;
@@ -40,11 +42,11 @@
 
         .anim-fade { animation: fadeInUp 1.2s ease-out forwards; }
         .logo-float { animation: float 4s ease-in-out infinite; }
-        .neon-glow { text-shadow: 0 0 10px var(--pink-onikuma), 0 0 20px var(--pink-onikuma); }
 
         /* --- NAVEGACIÓN --- */
         nav {
-            background: rgba(0,0,0,0.95);
+            background: rgba(0,0,0,0.9);
+            backdrop-filter: blur(10px);
             padding: 20px;
             position: sticky;
             top: 0;
@@ -69,11 +71,70 @@
             transition: 0.3s;
         }
 
-        nav a:hover { color: var(--pink-onikuma); }
+        nav a:hover { color: var(--pink-onikuma); text-shadow: 0 0 8px var(--pink-onikuma); }
 
-        .container { max-width: 1100px; margin: auto; padding: 80px 20px; }
+        .container { max-width: 1100px; margin: auto; padding: 60px 20px; }
 
         h2 { font-family: 'Orbitron', sans-serif; text-align: center; font-size: 2.5rem; margin-bottom: 40px; }
+
+        /* --- BANNER PRINCIPAL ACTUALIZADO --- */
+        .hero-banner {
+            position: relative;
+            height: 550px;
+            background: url('banner.jpg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            border-bottom: 5px solid var(--pink-onikuma);
+        }
+
+        .banner-content {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 40px;
+        }
+
+        .gamer-text {
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .gamer-text h1 {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 4.5rem;
+            color: white;
+            line-height: 1.1;
+            margin: 0;
+            text-shadow: 4px 4px 0px var(--pink-onikuma);
+            transform: rotate(-2deg);
+        }
+
+        .gamer-text p {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.4rem;
+            color: var(--pink-onikuma);
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.7);
+            display: inline-block;
+            padding: 5px 15px;
+            margin-top: 15px;
+        }
+
+        /* --- SECCIÓN DE MARCA (BAJO EL BANNER) --- */
+        .brand-section {
+            padding: 80px 0;
+            background: rgba(255, 0, 127, 0.02);
+            border-bottom: 1px solid #111;
+        }
+
+        .info-box {
+            background: rgba(20, 20, 20, 0.8);
+            border-left: 4px solid var(--pink-onikuma);
+            padding: 25px;
+            margin-bottom: 25px;
+            backdrop-filter: blur(5px);
+        }
 
         /* --- PRODUCTOS --- */
         .grid-productos {
@@ -84,17 +145,17 @@
 
         .card {
             background: var(--card-bg);
-            border-radius: 15px;
+            border-radius: 5px;
             overflow: hidden;
             transition: 0.4s;
-            border: 1px solid #333;
+            border: 1px solid #222;
             text-align: center;
         }
 
         .card:hover {
-            transform: translateY(-10px) scale(1.03);
+            transform: translateY(-10px);
             border-color: var(--pink-onikuma);
-            box-shadow: 0 0 20px rgba(255, 0, 127, 0.4);
+            box-shadow: -5px 5px 0px var(--pink-onikuma);
         }
 
         .card img { width: 100%; height: 220px; object-fit: cover; }
@@ -111,36 +172,34 @@
         .video-box {
             background: #111;
             padding: 15px;
-            border-radius: 15px;
+            border-radius: 10px;
             border: 1px solid #333;
         }
 
-        video { border-radius: 10px; width: 100%; display: block; background: #000; }
+        video { border-radius: 5px; width: 100%; display: block; }
 
         /* --- CONTACTO --- */
         form { display: flex; flex-direction: column; gap: 15px; max-width: 600px; margin: auto; }
         input, textarea {
-            background: #222;
-            border: 1px solid #444;
-            padding: 12px;
+            background: #111;
+            border: 1px solid #333;
+            padding: 15px;
             color: white;
-            border-radius: 5px;
+            font-family: 'Rajdhani', sans-serif;
         }
 
         button {
             background: var(--pink-onikuma);
             color: white;
             border: none;
-            padding: 15px;
+            padding: 18px;
             font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
             cursor: pointer;
             transition: 0.3s;
         }
 
-        button:hover {
-            box-shadow: 0 0 15px var(--pink-onikuma);
-            letter-spacing: 1px;
-        }
+        button:hover { background: white; color: var(--pink-onikuma); box-shadow: 0 0 20px white; }
     </style>
 </head>
 <body>
@@ -154,18 +213,31 @@
         </ul>
     </nav>
 
-    <section id="home" class="container anim-fade">
-        <h2 class="neon-glow">ONIKUMA GAMING</h2>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
-            <div>
-                <h3 style="color: var(--pink-onikuma); font-family: 'Orbitron';">Misión</h3>
-                <p>Brindar a los entusiastas del gaming periféricos de alta precisión que combinan un diseño vanguardista con una comodidad inigualable para sesiones de juego épicas.</p>
-                <br>
-                <h3 style="color: var(--pink-onikuma); font-family: 'Orbitron';">Visión</h3>
-                <p>Liderar el mercado de accesorios gamer ofreciendo tecnología accesible y estilizada que permita a cada jugador expresar su personalidad.</p>
+    <header id="home" class="hero-banner">
+        <div class="banner-content">
+            <div class="gamer-text anim-fade">
+                <h1>DOMINA EL JUEGO</h1>
+                <p>ONIKUMA ELITE GEAR</p>
             </div>
-            <div style="text-align: center;">
-                <img src="Onikuma Logo.jpg" alt="Logo" class="logo-float" style="width: 100%; max-width: 350px;">
+        </div>
+    </header>
+
+    <section class="brand-section">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+                <div class="anim-fade">
+                    <div class="info-box">
+                        <h3 style="font-family: 'Orbitron'; color: var(--pink-onikuma); margin-top:0;">Misión</h3>
+                        <p style="font-size: 1.2rem; line-height: 1.6;">Equipar a la comunidad con tecnología de vanguardia y diseño disruptivo para una experiencia gaming superior.</p>
+                    </div>
+                    <div class="info-box">
+                        <h3 style="font-family: 'Orbitron'; color: var(--pink-onikuma); margin-top:0;">Visión</h3>
+                        <p style="font-size: 1.2rem; line-height: 1.6;">Liderar la cultura global del videojuego, siendo la marca referente en estilo, potencia y comodidad.</p>
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <img src="Onikuma Logo.jpg" alt="Logo" class="logo-float" style="width: 100%; max-width: 380px; filter: drop-shadow(0 0 25px var(--pink-onikuma));">
+                </div>
             </div>
         </div>
     </section>
@@ -184,36 +256,27 @@
         </div>
     </section>
 
- <section id="videos" class="container anim-fade">
-    <h2 class="neon-glow">Media Center</h2>
-    
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-        
-        <div class="video-box" style="background: #111; padding: 15px; border-radius: 15px; border: 1px solid #333;">
-            <video controls style="width: 100%; border-radius: 10px;">
-                <source src="video_k15.mp4" type="video/mp4">
-            </video>
-            <h3 style="text-align:center; color: var(--pink-onikuma); margin-top:15px; font-family: 'Orbitron';">K15 Showcase</h3>
-        </div>
-
-        <div class="video-box" style="background: #111; padding: 15px; border-radius: 15px; border: 1px solid #333;">
-            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px;">
-                <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
-                    src="https://www.youtube.com/embed/KyxgtazNusY" allowfullscreen></iframe>
+    <section id="videos" class="container anim-fade">
+        <h2 class="neon-glow">Media Center</h2>
+        <div class="grid-videos">
+            <div class="video-box">
+                <video controls><source src="video_k15.mp4" type="video/mp4"></video>
+                <h3 style="text-align:center; color: var(--pink-onikuma); margin-top:15px; font-family: 'Orbitron';">K15 Showcase</h3>
             </div>
-            <h3 style="text-align:center; color: var(--pink-onikuma); margin-top:15px; font-family: 'Orbitron';">GT 808 Review</h3>
-        </div>
-
-        <div class="video-box" style="background: #111; padding: 15px; border-radius: 15px; border: 1px solid #333;">
-            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px;">
-                <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
-                    src="https://www.youtube.com/embed/esZgyePD5T0" allowfullscreen></iframe>
+            <div class="video-box">
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 5px;">
+                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" src="https://www.youtube.com/embed/KyxgtazNusY" allowfullscreen></iframe>
+                </div>
+                <h3 style="text-align:center; color: var(--pink-onikuma); margin-top:15px; font-family: 'Orbitron';">GT 808 Review</h3>
             </div>
-            <h3 style="text-align:center; color: var(--pink-onikuma); margin-top:15px; font-family: 'Orbitron';">X91 Lighting Pro</h3>
+            <div class="video-box">
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 5px;">
+                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" src="https://www.youtube.com/embed/esZgyePD5T0" allowfullscreen></iframe>
+                </div>
+                <h3 style="text-align:center; color: var(--pink-onikuma); margin-top:15px; font-family: 'Orbitron';">X91 Lighting Pro</h3>
+            </div>
         </div>
-
-    </div>
-</section>
+    </section>
 
     <section id="contacto" class="container">
         <h2>Contáctenos</h2>
@@ -225,8 +288,8 @@
         </form>
     </section>
 
-    <footer style="text-align: center; padding: 40px; color: #444;">
-        <p>&copy; 2026 Onikuma Gaming</p>
+    <footer style="text-align: center; padding: 60px; color: #444; border-top: 1px solid #111;">
+        <p>&copy; 2026 Onikuma Gaming | Periféricos Elite</p>
     </footer>
 
 </body>

@@ -184,23 +184,31 @@
         </div>
     </section>
 
-    <section id="videos" class="container anim-fade">
-        <h2>Media Center</h2>
+   <section id="videos" class="container anim-fade">
+        <h2 class="neon-glow">Media Center</h2>
         <div class="grid-videos">
+            
             <div class="video-box">
                 <video controls>
                     <source src="video_k15.mp4" type="video/mp4">
-                    Tu navegador no soporta video local.
+                    Tu navegador no soporta video.
                 </video>
                 <h3 style="text-align:center; color: var(--pink-onikuma); margin-top:15px; font-family: 'Orbitron';">K15 Showcase</h3>
             </div>
+
             <div class="video-box">
-                <video controls>
-                    <source src="video2.mp4" type="video/mp4">
-                    Tu navegador no soporta video local.
-                </video>
-                <h3 style="text-align:center; color: var(--pink-onikuma); margin-top:15px; font-family: 'Orbitron';">Experience</h3>
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px;">
+                    <iframe 
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                        src="https://www.youtube.com/embed/KyxgtazNusY" 
+                        title="YouTube video player" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <h3 style="text-align:center; color: var(--pink-onikuma); margin-top:15px; font-family: 'Orbitron';">GT 808 Experience</h3>
             </div>
+
         </div>
     </section>
 

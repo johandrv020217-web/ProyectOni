@@ -25,6 +25,7 @@
             overflow-x: hidden;
         }
 
+        /* --- NAVEGACIÓN --- */
         nav {
             background: rgba(0,0,0,0.95);
             backdrop-filter: blur(10px);
@@ -34,41 +35,34 @@
             z-index: 100;
             border-bottom: 2px solid var(--pink-onikuma);
         }
-        nav ul { display: flex; justify-content: center; list-style: none; gap: 30px; margin: 0; padding: 0; }
-        nav a { color: white; text-decoration: none; font-family: 'Orbitron', sans-serif; font-size: 0.9rem; transition: 0.3s; }
-        nav a:hover { color: var(--pink-onikuma); }
+        nav ul { display: flex; justify-content: center; list-style: none; gap: 25px; margin: 0; padding: 0; }
+        nav a { color: white; text-decoration: none; font-family: 'Orbitron', sans-serif; font-size: 0.85rem; transition: 0.3s; text-transform: uppercase; }
+        nav a:hover { color: var(--pink-onikuma); text-shadow: 0 0 10px var(--pink-onikuma); }
 
+        /* --- BANNER PRINCIPAL (ESTILO ESTABLECIDO) --- */
         .hero-banner {
             position: relative;
             height: 550px;
-            background: linear-gradient(to right, rgba(0,0,0,0.6) 20%, rgba(0,0,0,0.1)), url('banner.png') no-repeat center center;
+            background: linear-gradient(to right, rgba(0,0,0,0.7) 10%, rgba(0,0,0,0.1)), url('banner.png') no-repeat center center;
             background-size: cover;
             display: flex;
-            align-items: center; /* Centrado vertical */
-            justify-content: flex-start; /* Alineado a la izquierda horizontal */
+            align-items: center;
+            justify-content: flex-start;
             border-bottom: 5px solid var(--pink-onikuma);
         }
 
-        .banner-content { 
-            width: 100%; 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            padding: 0 50px; /* Margen lateral para que no toque el borde */
-        }
+        .banner-content { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 50px; }
 
-        .gamer-text {
-            text-align: left; /* Alineación del texto a la izquierda */
-            max-width: 600px;
-        }
+        .gamer-text { text-align: left; max-width: 650px; }
 
         .gamer-text h1 {
             font-family: 'Permanent Marker', cursive;
-            font-size: clamp(3rem, 8vw, 5rem); /* Mantiene el tamaño actual */
+            font-size: clamp(3rem, 8vw, 5rem);
             color: white;
             margin: 0;
-            text-shadow: 4px 4px 0px var(--pink-onikuma);
+            text-shadow: 4px 4px 0px var(--pink-onikuma); /* Sombra establecida */
             line-height: 1.1;
-            transform: rotate(-2deg);
+            transform: rotate(-2deg); /* Inclinación establecida */
         }
 
         .gamer-text p {
@@ -77,27 +71,39 @@
             color: var(--pink-onikuma);
             background: rgba(0, 0, 0, 0.8);
             display: inline-block;
-            padding: 8px 20px;
+            padding: 10px 20px;
             margin-top: 20px;
             border: 1px solid var(--pink-onikuma);
             font-weight: bold;
-            letter-spacing: 2px;
         }
 
-        .brand-section { padding: 80px 0; background: #050505; border-bottom: 1px solid #111; }
+        /* --- SECCIONES --- */
         .container { max-width: 1100px; margin: auto; padding: 0 20px; }
+        .brand-section { padding: 80px 0; background: #050505; border-bottom: 1px solid #111; }
         .info-box { background: rgba(20, 20, 20, 0.8); border-left: 4px solid var(--pink-onikuma); padding: 25px; margin-bottom: 25px; }
 
+        /* --- PRODUCTOS --- */
         .grid-productos { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; margin-top: 40px; }
         .card { background: var(--card-bg); border-radius: 5px; border: 1px solid #222; overflow: hidden; transition: 0.3s; text-align: center; }
         .card:hover { border-color: var(--pink-onikuma); transform: translateY(-5px); box-shadow: -5px 5px 0px var(--pink-onikuma); }
         .card img { width: 100%; height: 220px; object-fit: cover; }
         .card h3 { font-family: 'Orbitron'; color: var(--pink-onikuma); font-size: 1.1rem; margin: 15px 0; }
 
+        /* --- MEDIA CENTER --- */
         .grid-videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-top: 40px; }
         .v-box { background: #111; padding: 15px; border: 1px solid #333; border-radius: 8px; text-align: center; }
-        video, iframe { width: 100%; border-radius: 4px; aspect-ratio: 16/9; }
+        video, iframe { width: 100%; border-radius: 4px; aspect-ratio: 16/9; border: 0; background: #000; }
 
+        /* --- MAPA Y CONTACTO --- */
+        .map-container { 
+            width: 100%; 
+            height: 450px; 
+            border: 2px solid var(--pink-onikuma); 
+            border-radius: 10px; 
+            overflow: hidden; 
+            margin-top: 30px;
+            filter: invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%);
+        }
         .contacto-section { padding: 80px 0; background: #080808; }
         form { display: flex; flex-direction: column; gap: 15px; max-width: 600px; margin: auto; }
         input, textarea { background: #111; border: 1px solid #333; padding: 15px; color: white; font-family: 'Rajdhani'; font-size: 1rem; }
@@ -112,6 +118,7 @@
             <li><a href="#home">Inicio</a></li>
             <li><a href="#productos">Productos</a></li>
             <li><a href="#videos">Media</a></li>
+            <li><a href="#ubicacion">Dirección</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>
@@ -130,12 +137,12 @@
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; align-items: center;">
                 <div>
                     <div class="info-box">
-                        <h3 style="color: var(--pink-onikuma); font-family: 'Orbitron'; margin-top: 0;">Misión</h3>
-                        <p>Equipar a la comunidad con tecnología de vanguardia y diseño disruptivo para una experiencia gaming superior..</p>
+                        <h3 style="color: var(--pink-onikuma); font-family: 'Orbitron'; margin: 0 0 10px 0;">Misión</h3>
+                        <p>Brindar la mejor tecnología y estilo para potenciar el rendimiento de cada jugador.</p>
                     </div>
                     <div class="info-box">
-                        <h3 style="color: var(--pink-onikuma); font-family: 'Orbitron'; margin-top: 0;">Visión</h3>
-                        <p>Liderar la cultura global del videojuego, siendo la marca referente en estilo, potencia y comodidad..</p>
+                        <h3 style="color: var(--pink-onikuma); font-family: 'Orbitron'; margin: 0 0 10px 0;">Visión</h3>
+                        <p>Ser la marca líder mundial en periféricos gaming.</p>
                     </div>
                 </div>
                 <div style="text-align: center;">
@@ -163,7 +170,9 @@
         <h2 style="font-family: 'Orbitron'; text-align: center;">Media Center</h2>
         <div class="grid-videos">
             <div class="v-box">
-                <video controls><source src="video_k15.mp4" type="video/mp4"></video>
+                <video controls playsinline preload="auto">
+                    <source src="video_k15.mp4" type="video/mp4">
+                </video>
                 <p style="font-family: 'Orbitron'; color: var(--pink-onikuma); margin-top:10px;">K15 Showcase</p>
             </div>
             <div class="v-box">
@@ -177,41 +186,34 @@
         </div>
     </section>
 
+    <section id="ubicacion" class="container" style="padding: 80px 20px;">
+        <h2 style="font-family: 'Orbitron'; text-align: center;">Sede Global Onikuma</h2>
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3682.52041282247!2d114.04164177530237!3d22.634358979448887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3403f36037f645e7%3A0xe47581a86afbd444!2sMantao%20Industrial%20Park!5e0!3m2!1ses!2sco!4v1714950000000!5m2!1ses!2sco" 
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
+            <p style="color: #888;">Mantao Building, 1013 Minzhi St, Longhua District, Shenzhen, China</p>
+            <a href="https://maps.app.goo.gl/uXpX91XJ25S6vE689" target="_blank" style="color: var(--pink-onikuma); text-decoration: none; font-family: 'Orbitron'; border: 1px solid var(--pink-onikuma); padding: 10px 20px; display: inline-block;">VER EN GOOGLE MAPS →</a>
+        </div>
+    </section>
+
     <section id="contacto" class="contacto-section">
         <div class="container">
             <h2 style="font-family: 'Orbitron'; text-align: center;">Contáctanos</h2>
             <form action="#">
                 <input type="text" placeholder="Gamertag / Nombre" required>
                 <input type="email" placeholder="Correo Electrónico" required>
-                <textarea rows="5" placeholder="¿Cómo podemos mejorar tu setup?"></textarea>
-                <button type="submit">ENVIAR SOLICITUD</button>
+                <textarea rows="5" placeholder="Cuéntanos sobre tu setup..."></textarea>
+                <button type="submit">ENVIAR MENSAJE</button>
             </form>
         </div>
     </section>
 
-    <section id="ubicacion" class="container" style="padding: 80px 20px;">
-        <h2 style="font-family: 'Orbitron'; text-align: center; margin-bottom: 40px;">Visítanos</h2>
-        <div style="width: 100%; height: 450px; border: 2px solid var(--pink-onikuma); border-radius: 10px; overflow: hidden; box-shadow: 0 0 20px rgba(255, 0, 127, 0.2);">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3685.244390554522!2d113.92333687595462!3d22.515752335113943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3403ee46376611e7%3A0x507581a86afd5244!2sShenzhen%20Ouni%20Digital%20Technology%20Co.%2CLtd.!5e0!3m2!1ses!2sco!4v1714950000000!5m2!1ses!2sco" 
-                width="100%" 
-                height="100%" 
-                style="border:0; filter: invert(90%) hue-rotate(180sdeg) brightness(95%) contrast(90%);" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-        </div>
-        <div style="text-align: center; margin-top: 20px;">
-            <p style="color: #888;">Dirección: Ouni Building, 1013 Minzhi St, Longhua, Shenzhen, China</p>
-            <a href="https://maps.app.goo.gl/3K2pZ9pT9v9D9j9eA" target="_blank" style="color: var(--pink-onikuma); text-decoration: none; font-family: 'Orbitron'; font-size: 0.9rem;">
-                ABRIR EN GOOGLE MAPS →
-            </a>
-        </div>
-    </section>
-    
-    <footer style="text-align: center; padding: 40px; color: #444;">
-        <p>&copy; 2026 Onikuma Gaming | Periféricos de Alto Rendimiento</p>
+    <footer style="text-align: center; padding: 40px; color: #444; border-top: 1px solid #222;">
+        <p>© 2026 Onikuma Gaming | Periféricos de Alto Rendimiento</p>
     </footer>
 
 </body>
